@@ -1,0 +1,9 @@
+tensorflow==1.15.5
+torch 
+torchvision 
+torchaudio
+bert-serving-server
+bert-serving-client
+librosa==0.8.0
+dgl 
+psutil
