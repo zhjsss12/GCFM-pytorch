@@ -11,7 +11,7 @@ We provide a pytorch implementation. The following are needed:
 * dgl 
 * psutil
 
-You can quick start via cloning repo and install ``requirements.txt`` in a ``Python >= 3.7.0`` environment.
+You can quick start via cloning repo and installing ``requirements.txt`` in a ``Python >= 3.7.0`` environment.
 ```
 git clone https://github.com/zhjsss12/GCFM-pytorch
 cd GCFM-pytorch
