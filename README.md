@@ -25,6 +25,6 @@ Download [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10
 ```
 bert-serving-start -pooling_strategy NONE -model_dir ./uncased_L-12_H-768_A-12/ -max_seq_len=20 -num_worker=4 -port=5777 -port_out=5778
 ```
-You can change port if needed.
+You can change ``port`` and ``port_out`` if needed.
 
 ## Deception Detection
