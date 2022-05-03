@@ -27,3 +27,7 @@ bert-serving-start -pooling_strategy NONE -model_dir ./uncased_L-12_H-768_A-12/ 
 You can change ``port`` and ``port_out`` if needed.
 
 ## Deception Detection
+The training settings can be found in ``./config``, including parameter settings and 10-fold spliting. Modifing configuration and then start training and validation:
+```
+python train_val.py
+```
