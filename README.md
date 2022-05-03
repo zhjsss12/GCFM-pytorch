@@ -9,7 +9,6 @@ We provide a pytorch implementation. The following are needed:
 * bert-serving-server, bert-serving-client
 * librosa==0.8.0
 * dgl 
-* psutil
 
 You can quick start via cloning repo and installing ``requirements.txt`` in a ``Python >= 3.7.0`` environment.
 ```
