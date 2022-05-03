@@ -21,9 +21,10 @@ pip install -r requirements.txt
 ```
 
 ### Start bert server
-Using bert-serving to obtain text embeddings. You can change port if needed.
+Download [BERT-Base, Uncased](https://storage.googleapis.com/bert_models/2018_10_18/uncased_L-12_H-768_A-12.zip) and unzip in ``GCFM-pytorch/``. Start bert-serving as following:
 ```
 bert-serving-start -pooling_strategy NONE -model_dir ./uncased_L-12_H-768_A-12/ -max_seq_len=20 -num_worker=4 -port=5777 -port_out=5778
 ```
+You can change port if needed.
 
 ## Deception Detection
