@@ -108,6 +108,7 @@ def train_graph(fold):
                 fmeasure_val = f_measure
         print("Epoch {:05d} | train Loss {:.4f} | Time(s) {:.4f} train acc {:.4f}".format(
             epoch, loss.item(), np.mean(dur),train_acc))
+        torch.save({'net': model.state_dict()}, os.path.join(opt.model_path, fold+'-GCFM-'+str(epoch)+'.ckpt'))
  
     return best_acc*100, pre_val, rec_val, fmeasure_val
          
