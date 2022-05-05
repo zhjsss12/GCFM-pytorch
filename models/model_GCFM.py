@@ -8,8 +8,7 @@ class PreTrainedResNet(nn.Module):
     def __init__(self):
         super(PreTrainedResNet, self).__init__()
         resnet = models.resnet50(pretrained=True)
-        resnet.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3,
-                               bias=False)
+        resnet.conv1 = nn.Conv2d(3, 64, kernel_size=7, stride=2, padding=3, bias=False)
         modules = list(resnet.children())[:-2]   
         self.resnet = nn.ModuleList(modules)
     def forward(self, image):
