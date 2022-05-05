@@ -53,9 +53,9 @@ def train_graph(fold):
 
     model.to(device)
     optimizer = torch.optim.Adam([
-        {'params': model.parameters(), 'lr': 0.001}
+        {'params': model.layer1.fusion.parameters(), 'lr': 0.005}
     ],
-        lr = 0.005,
+        lr = 0.001,
         weight_decay = 0.01)
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=15, gamma=0.5) 
     
@@ -99,7 +99,7 @@ def train_graph(fold):
             f_measure = f1_score(val_true, val_pred, average='macro', zero_division=0)*100
             test_acc = test_acc.item() / test_num
             
-            if test_acc > best_acc and epoch > 20:
+            if test_acc > best_acc or epoch%20 == 0:
                 torch.save({'net': model.state_dict()}, os.path.join(opt.model_path, fold+'-GCFM-'+str(epoch)+'.ckpt'))
             if test_acc > best_acc:
                 best_acc = test_acc
@@ -108,7 +108,7 @@ def train_graph(fold):
                 fmeasure_val = f_measure
         print("Epoch {:05d} | train Loss {:.4f} | Time(s) {:.4f} train acc {:.4f}".format(
             epoch, loss.item(), np.mean(dur),train_acc))
-        torch.save({'net': model.state_dict()}, os.path.join(opt.model_path, fold+'-GCFM-'+str(epoch)+'.ckpt'))
+        
  
     return best_acc*100, pre_val, rec_val, fmeasure_val
          
