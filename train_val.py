@@ -8,7 +8,7 @@ import warnings
 from torch.nn import functional as F
 import numpy as np
 import os
-from model.model_GCFM_v2 import TwoLayeredPosGAT
+from model.model_GCFM import TwoLayeredPosGAT
 warnings.filterwarnings("ignore")
 device = torch.device('cpu')  
 
