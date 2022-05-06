@@ -93,7 +93,7 @@ class Integrator(nn.Module):
         
         #  audio
         self.audio_linear = nn.Sequential(         
-            nn.LayerNorm(312),            
+            nn.LayerNorm(312,elementwise_affine=False),            
             nn.Linear(312,512,bias=True),
             nn.ReLU(),
         )
