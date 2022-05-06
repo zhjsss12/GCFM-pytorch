@@ -93,8 +93,11 @@ class Integrator(nn.Module):
         
         #  audio
         self.audio_linear = nn.Sequential(         
-            nn.LayerNorm(312,elementwise_affine=False),            
-            nn.Linear(312,512,bias=True)
+            nn.LayerNorm(312,elementwise_affine=False),
+            nn.Linear(312, 312*4, bias=True), 
+            nn.LayerNorm(312*4),  
+            nn.ReLU(),        
+            nn.Linear(312*4,512,bias=True)
         )
 
         #  cross-modal fusion
