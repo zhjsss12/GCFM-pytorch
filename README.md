@@ -31,3 +31,9 @@ The training settings can be found in ``./config``, including parameter settings
 ```
 python train_val.py
 ```
+
+## Reference
+Cite by 
+```
+H. Zhang, Y. Ding, L. Cao, X. Wang and L. Feng, "Fine-Grained Question-Level Deception Detection via Graph-Based Learning and Cross-Modal Fusion," in IEEE Transactions on Information Forensics and Security, vol. 17, pp. 2452-2467, 2022, doi: 10.1109/TIFS.2022.3186799.
+```
